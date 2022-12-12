@@ -1,6 +1,7 @@
 import numpy as np
 
 def reset_stack():
+    #hard-coded default stack
     stack = np.chararray((56,9))
     stack[:] = '-'
     stack[56-8:56,0]= ['G','W','L','J','B','R','T','D']
