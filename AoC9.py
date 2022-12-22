@@ -64,5 +64,5 @@ def move_rope(input,node_location,node_path):
 count, _, _ = move_rope(input, location_short, node_path_short)
 print("Short rope's tail's unique locations:",count)
 
-count, loc, path = move_rope(input, location_long, node_path_long)
+count, _, _ = move_rope(input, location_long, node_path_long)
 print("Long rope's tail's unique locations:",count)
