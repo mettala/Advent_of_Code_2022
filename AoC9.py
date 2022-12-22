@@ -6,10 +6,10 @@ node_path_short = {'H':[[0,0]],1:[[0,0]]}
 location_long = {'H': [0,0]}
 for i in range(1,9+1):
     location_long[i] = [0,0]
+
 node_path_long = {'H': [[0,0]]}
 for i in range(1,9+1):
     node_path_long[i] = [0,0]
-
 
 def calculate_distance(location_1, location_2):
     i = location_1[0]-location_2[0]
