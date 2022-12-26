@@ -67,8 +67,7 @@ def initialize_monkeys(input):
     return monkeys
 
 def run_rounds(loops,monkeys,worried = False):
-
-    for i in range(loops):
+    for _ in range(loops):
         for monkey in monkeys:
             while len(monkeys[monkey].items) > 0:
                 target,item = monkeys[monkey].throw_item(monkeys[monkey].items[0], worried)
