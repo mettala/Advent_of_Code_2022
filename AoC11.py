@@ -30,18 +30,14 @@ class Monkey:
             divider = 1
         else:
             divider = 3
-
         self.items.remove(item)
         if item > self.item_max_value:
             item = item % self.item_max_value
-
         if self.operator == '+':
             value = (int(item) + int(term)) // divider
         else:
             value = (int(item) * int(term)) // divider
-
         self.activity = self.activity + 1
-
         if self.run_test(value):
             return self.if_true, value
         else:
@@ -72,20 +68,16 @@ def run_rounds(loops,monkeys,worried = False):
             while len(monkeys[monkey].items) > 0:
                 target,item = monkeys[monkey].throw_item(monkeys[monkey].items[0], worried)
                 monkeys['monkey_'+str(target)].receive_item(item)
-
         activity_list = []
         for monkey in monkeys:
             activity_list.append(monkeys[monkey].activity)
-
     activity_list = sorted(activity_list)
     print('Level of monkey business after',loops,'rounds:',activity_list[-1]*activity_list[-2])
 
 import re
-import numpy as np
 
 input = open('.\\Desktop\\AoC\\AoC11\\input.txt','r').read().splitlines()
 monkeys = dict()
-
 monkeys = initialize_monkeys(input)
 
 test_divider_list=[]
@@ -95,11 +87,9 @@ item_max_value = np.prod(sorted(test_divider_list))
 
 for monkey in monkeys:
     monkeys[monkey].item_max_value = item_max_value
-
 run_rounds(20,monkeys)
 
 monkeys = initialize_monkeys(input)
 for monkey in monkeys:
     monkeys[monkey].item_max_value = item_max_value
-
 run_rounds(10_000,monkeys,worried=True)
